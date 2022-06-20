@@ -13,7 +13,7 @@ jobs:
 
       - name: Run a one-line script
         # run: echo "Hello World! Grettings from github actions demo"
-        run: sh ./github-action-script.sh
+        run: sh ./github-actions-scripts.sh
 
       - name: Run a multi-line script
         run: |
