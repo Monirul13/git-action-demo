@@ -1,8 +1,30 @@
-name: hello-world
-on: push
+name: Github Actions Demo
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo "Hello World! Grettings from github actions demo"
+
+      - name: Run a multi-line script
+        run: |
+          echo What is in this directory?
+          ls -a 
+          echo Is java installed?
+          java -version
+          echo
+          echo Is git installed?
+          git --version
+          echo What about build tools?
+          mvn --version
+          gradle --version
+          ant --version
+           
